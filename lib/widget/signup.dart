@@ -118,6 +118,7 @@ class _SignupState extends State<Signup> {
                         shape: new RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0)),
                         color: AppColor.primary,
+                        onPressed: () {  },
                         child: Text('Pervious'),
 
 

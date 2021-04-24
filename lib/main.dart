@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sapphire/widget/splash_screen.dart';
 
-
-import 'ui/splash_screen.dart';
 
 
 void main() {
