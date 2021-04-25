@@ -15,8 +15,15 @@ class AppColor {
       end: Alignment.bottomRight,
       colors: [
    
-        Color(0xff2B5C70),
-        Color(0xff2E6379),
+        Color(0xff23a6bb),
+        Color(0xff2a92a5),
+         Color(0xff318091),
+        Color(0xff376876),
+         Color(0xff3c5e6a),
+        Color(0xff3d5964),
+        Color(0xff45464f),
+        Color(0xff233F4C),
+
     
       ]);
   static const backgroundColors = LinearGradient(
@@ -24,17 +31,15 @@ class AppColor {
       end: Alignment.bottomRight,
       colors: [
      
-        Color(0xff20353E),
-        Color(0xff203640),
-        Color(0xff223C47),
+               Color(0xff23a6bb),
+        Color(0xff2a92a5),
+         Color(0xff318091),
+        Color(0xff376876),
+         Color(0xff3c5e6a),
+        Color(0xff3d5964),
+        Color(0xff45464f),
         Color(0xff233F4C),
-        Color(0xff254350),
-        Color(0xff254654),
-        Color(0xff274B59),
-        Color(0xff284E5F),
-        Color(0xff2B5466),
-        Color(0xff2C5A6D),
-        Color(0xff2E5E73),
+ 
     
 
       ]);
