@@ -35,8 +35,12 @@ class _SplashScreen extends State<SplashScreen> {
     decoration: BoxDecoration(
       gradient:AppColor.splashScreen
     ),
-    child: Center(
-      child:Image.asset('assets/images/logo.png')
+    child: Container(
+      height: 400,
+      width: 400,
+      child: Center(
+        child:  Image(image: AssetImage('assets/images/logos.jpeg'))
+      ),
     ),
        
     );

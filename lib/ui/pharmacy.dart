@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sapphire/constants/colors.dart';
-import 'package:sapphire/ui/secondPhase/secondphase.dart';
+import 'package:sapphire/ui/firstPage.dart';
 import 'package:sapphire/widget/customWidget.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:sapphire/widget/signup.dart';

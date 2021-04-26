@@ -15,14 +15,9 @@ class AppColor {
       end: Alignment.bottomRight,
       colors: [
    
-        Color(0xff23a6bb),
-        Color(0xff2a92a5),
-         Color(0xff318091),
-        Color(0xff376876),
-         Color(0xff3c5e6a),
-        Color(0xff3d5964),
-        Color(0xff45464f),
-        Color(0xff233F4C),
+        Color(0xffffffff),
+        Color(0xffffffff),
+     
 
     
       ]);

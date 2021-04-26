@@ -1,69 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:sapphire/constants/colors.dart';
-import 'package:sapphire/ui/secondPhase/thirdphase.dart';
 import 'package:sapphire/widget/customWidget.dart';
 import 'package:sapphire/widget/profile.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:sapphire/widget/signup.dart';
 
-import 'budge.dart';
+import 'thirdPage.dart';
 
-class SecondPage extends StatefulWidget {
+class ThirdPhase extends StatefulWidget {
   final List<String> list;
   final String title;
   final int keys;
+  final String equipment;
 
-  const SecondPage({
+  const ThirdPhase({
     @required this.list,
     @required this.title,
-    @required this.keys,
+    @required this.keys, this.equipment,
   });
   @override
   _StartScreenState createState() => _StartScreenState();
 }
 
-class _StartScreenState extends State<SecondPage> {
+class _StartScreenState extends State<ThirdPhase> {
+  //Medicine
+  List<String> homeopathic = [
+    " Gestro",
+    "Newro",
+    "Supplements",
+    "Liver",
+    "Child Care",
+  ];
+  List<String> alopathic = [
+    "Gestro",
+    "Newro",
+    "Supplements",
+    "liver",
+    "Injections/Syrup/Tablets",
+  ];
+  List<String> herbal = [
+    "Gestro"
+        "Newro"
+        "Supplements"
+        "Liver"
+        "Child Care"
+  ];
+
+  //Equipment
+  
+   List<String> surgicalEquipment = [
+   "scissor",
+"Knife"
+  ];
+    List<String> medicalEquipment= [
+"Gulco Meter"
+"Blood Pressure Meter"
+"DR Torch"
+
+  ];
+
   int customeSelection1;
-  List<String> equipments = [
-    "Surgical Equipment's",
-    "Medical Equipment's",
-    "Optical Equipment's",
-    "Dental Equipment's",
-    "Vital Science Equipment's",
-  ];
-  List<String> medicine = [
-    "Homeopathic",
-    "Allopathic",
-    "Herbal",
-  ];
-
-  List<String> onlinepayment = [
-    "Warehouse",
-    "Cooling Store",
-    "Online Payment",
-    "Fast Delivery",
-    "ERP System",
-    "Requirements of Staff",
-    "Maintance Staff",
-    "Data Entry",
-    "Others",
-  ];
-  List<String> otherpayment = [
-    " Staff",
-    "Refrigerator",
-    "Point Of Sale",
-  ];
-
-  List<String> mainDistributorbudge = [
-    " 50000 to 100000",
-    "100000 to 150000",
-    " 150000 to 300000",
-  ];
-  List<String> secondDistributorbudge = [
-    " 70000 to 130000",
-    "130000 to 200000",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +69,7 @@ class _StartScreenState extends State<SecondPage> {
         decoration: BoxDecoration(gradient: AppColor.backgroundColors),
         child: SingleChildScrollView(
             child: Container(
-              
+       
                 // height: 1200,
                 width: 440,
                 child: Column(children: [
@@ -89,9 +85,9 @@ class _StartScreenState extends State<SecondPage> {
                     animation: true,
                     animationDuration: 1000,
                     lineHeight: 20.0,
-                    percent: 50 / 100,
+                    percent: 70 / 100,
                     center: Text(
-                      "50" + "%",
+                      "70" + "%",
                       style: TextStyle(
                           fontSize: 12.0,
                           fontWeight: FontWeight.w600,
@@ -125,64 +121,52 @@ class _StartScreenState extends State<SecondPage> {
                       color: AppColor.primary,
                       child: Text('NEXT'),
                       onPressed: () {
-                        //medicle phase
-                        if (widget.keys == 99) {
+                        if (customeSelection1 == 0 && widget.keys == 0) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Fivepage(
-                                        list: mainDistributorbudge,
-                                        title: "Your Budge",
+                                  builder: (context) => ForthPage(
+                                        list: homeopathic,
+                                        title: "homeopathic",
                                         keys: customeSelection1,
                                       )));
-                        } else if (widget.keys == 9) {
+                        } else if (customeSelection1 == 1&& widget.keys == 0) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Fivepage(
-                                        list: secondDistributorbudge,
-                                        title: "Your Budge",
+                                  builder: (context) => ForthPage(
+                                        list: alopathic,
+                                        title: "alopathic",
+                                        keys: customeSelection1,
+                                      )));
+                        } else if (customeSelection1 == 2&& widget.keys == 0) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForthPage(
+                                        list: herbal,
+                                        title: "herbal",
+                                        keys: customeSelection1,
+                                      )));
+                        } else if (customeSelection1 == 0 && widget.keys == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForthPage(
+                                        list: surgicalEquipment,
+                                        title: "Surgical Equipment's",
+                                        keys: customeSelection1,
+                                      )));
+                        } else if (customeSelection1 == 1&& widget.keys == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForthPage(
+                                        list: medicalEquipment,
+                                        title: "Medical Equipment's",
                                         keys: customeSelection1,
                                       )));
                         } 
-                        else if (widget.keys == 44&&customeSelection1 == 0) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Fivepage(
-                                        list: onlinepayment,
-                                        title: "Online Pharmacy",
-                                        keys: customeSelection1,
-                                      )));
-                        }
-                        else if (widget.keys == 44&&customeSelection1 == 1) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Fivepage(
-                                        list: otherpayment,
-                                        title: "Physical Pharmacy",
-                                        keys: customeSelection1,
-                                      )));
-                        }else if (customeSelection1 == 0 && widget.keys == 0) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ThirdPhase(
-                                        list: medicine,
-                                        title: "Medicine",
-                                        keys: customeSelection1,
-                                      )));
-                        } else if (customeSelection1 == 1 && widget.keys == 0) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ThirdPhase(
-                                        list: equipments,
-                                        title: "Equipments",
-                                        keys: customeSelection1,
-                                      )));
-                        }
                         else{
                               Navigator.push(
             context, MaterialPageRoute(builder: (context) => Signup()));
